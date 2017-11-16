@@ -1,0 +1,26 @@
+# Debug
+build/
+
+# node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+
+
+# fastlane
+#
+# It is recommended to not store the screenshots in the git repo. Instead, use fastlane to re-generate the
+# screenshots whenever they are needed.
+# For more information about the recommended setup visit:
+# https://github.com/fastlane/fastlane/blob/master/fastlane/docs/Gitignore.md
+
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+
+
+
+# 忽略密钥相关  http://www.hlzblog.top/Article?id=34
+*.keystore
+gradle-2.14.1-all.zip
+gradle.properties
