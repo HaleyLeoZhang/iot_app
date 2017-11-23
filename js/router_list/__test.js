@@ -7,11 +7,12 @@ import {
 
 
 // import Base from '../core_screen/Base';
-import TestWebview_rn_bridgeScreen from '../core_screen/test/webview_rn_bridge'
+// import TestWebview_rn_bridgeScreen from '../core_screen/test/webview_rn_bridge';
+import TestEsp_touchScreen from '../core_screen/test/esp_touch';
 //+++++++++++++++++++++++++++++++++++++++++++++
 //              引入组件文件
 //+++++++++++++++++++++++++++++++++++++++++++++
-class IndexRouter extends TestWebview_rn_bridgeScreen{
+class IndexRouter extends TestEsp_touchScreen{
   // // 析构函数
   // constructor( props ){
   //   super( props );

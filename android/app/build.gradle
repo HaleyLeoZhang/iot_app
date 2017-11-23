@@ -146,6 +146,10 @@ android {
 }
 
 dependencies {
+    compile project(':react-native-wechat')
+    compile project(':react-native-image-picker')
+    compile project(':react-native-image-crop-picker')
+    compile project(':react-native-camera')
     // 如果你需要支持GIF动图
     compile 'com.facebook.fresco:animated-gif:1.0.1'
     

@@ -55,7 +55,7 @@ export default class TestWebview_rn_bridgeScreen extends Base{
     );
   }
 
-  // 主渲染输出， --- 要重写
+  // 主渲染输出
   render(){
     return(
       <View style={coreStyle.container}>
