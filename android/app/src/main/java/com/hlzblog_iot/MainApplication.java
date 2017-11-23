@@ -3,6 +3,9 @@ package com.hlzblog_iot;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.tuanpm.RCTSmartconfig.RCTSmartconfigPackage;
+import com.pusherman.networkinfo.RNNetworkInfoPackage;
+import com.devstepbcn.wifi.AndroidWifiPackage;
 import com.theweflex.react.WeChatPackage;
 import com.imagepicker.ImagePickerPackage;
 import com.reactnative.ivpusic.imagepicker.PickerPackage;
@@ -27,6 +30,9 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new RCTSmartconfigPackage(),
+            new RNNetworkInfoPackage(),
+            new AndroidWifiPackage(),
             new WeChatPackage(),
             new ImagePickerPackage(),
             new PickerPackage(),

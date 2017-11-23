@@ -146,6 +146,9 @@ android {
 }
 
 dependencies {
+    compile project(':react-native-smartconfig')
+    compile project(':react-native-network-info')
+    compile project(':react-native-android-wifi')
     compile project(':react-native-wechat')
     compile project(':react-native-image-picker')
     compile project(':react-native-image-crop-picker')
