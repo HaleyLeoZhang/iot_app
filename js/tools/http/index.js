@@ -1,11 +1,11 @@
+//++++++++++++++++++++++++++++++++++++++++++++++++++
+//  Author: 云天河Blog       http://www.hlzblog.top/
+//++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
 /**
 * HTTP请求
 */
-import React, {
-  NetInfo
-}
-from 'react-native';
-
 import networkTool from './networkTool';
 import handle from './handle';
 

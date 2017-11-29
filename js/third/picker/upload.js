@@ -1,3 +1,7 @@
+//++++++++++++++++++++++++++++++++++++++++++++++++++
+//  Author: 云天河Blog       http://www.hlzblog.top/
+//++++++++++++++++++++++++++++++++++++++++++++++++++
+
 import toast from '../../tool/toast';
 
 default class upload{

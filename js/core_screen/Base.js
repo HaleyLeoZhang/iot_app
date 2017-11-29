@@ -1,3 +1,7 @@
+//++++++++++++++++++++++++++++++++++++++++++++++++++
+//  Author: 云天河Blog       http://www.hlzblog.top/
+//++++++++++++++++++++++++++++++++++++++++++++++++++
+
 // 官方组件
 import React, { Component } from 'react';
 import {View, ScrollView, Image} from 'react-native';
