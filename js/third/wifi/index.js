@@ -1,5 +1,5 @@
 /**
-* 用 wifi模块的esptouch技术。绑定设备 功能汇总
+* 用 wifi模块的 smartconfig 相关技术。绑定设备 功能汇总
 */
 
 // ios & android : 配置wifi
@@ -11,7 +11,6 @@ import { NetworkInfo } from 'react-native-network-info';
 
 
 export default class wifi{
-
   //++++++++++++++++++++++++++++++++++++++
   //      IOS & Android   通用部分
   //++++++++++++++++++++++++++++++++++++++
@@ -23,6 +22,8 @@ export default class wifi{
   *    {    
   *      "ssid": "wifi名称",
   *      "password": "wifi密码"
+  *      "success":  ()=>{...}
+  *      "error":()=>{...}
   *    }
   */
   static wifi_config_start(__config){
@@ -36,9 +37,10 @@ export default class wifi{
     Smartconfig.start(__config__)
       // 成功后回调
       .then(results => {
+        __config.success(results); // 执行回调
         // Array of device success do smartconfig
-        console.log('testScreen -> test : success');
-        console.log(results);
+        tool.log('bindWifiDeviceModule -> wifi_config_start : success');
+        tool.log(results);
         /* 示例返回数据
           [
             {
@@ -52,9 +54,10 @@ export default class wifi{
             ...
           ]
         */
-      }).catch(error => {
-        console.log('testScreen -> test : error');
-        console.log(error);
+      }).catch(e => {
+        tool.log('bindWifiDeviceModule -> wifi_config_start : error');
+        tool.log(e.message);
+        __config.error(e);
       });
   }
 
@@ -70,6 +73,7 @@ export default class wifi{
   * @param callback func 带参回调函数(string)
   */
   static wifi_get_ssid(func){
+    tool.log('正在执行wifi_get_ssid');
     NetworkInfo.getSSID(ssid => {
       func(ssid);
     });
@@ -102,9 +106,32 @@ export default class wifi{
         func(wifiArray);
       }
       , error => {
-        console.log(error, 3);
+        tool.log(error, 3);
       }
     );
+  }
+
+  /**
+  * 判断wifi连接状态
+  {
+    "success":()={..0}
+    "error":()={..0}
+  }
+  */
+  static wifi_status(d){
+    Wifi.isEnabled((isEnabled) => {
+      if (isEnabled) {
+        console.log("wifi service enabled");
+        if( undefined !== d.success ){
+          d.success();
+        }
+      } else {
+        console.log("wifi service is disabled");
+        if( undefined !== d.error ){
+          d.error();
+        }
+      }
+    });
   }
 
 

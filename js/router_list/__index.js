@@ -1,13 +1,16 @@
 import {AppRegistry} from 'react-native';
-import {StackNavigator} from 'react-navigation'; 
+import {
+  StackNavigator, 
+  NavigationActions,
+}
+from 'react-navigation';
 // 只用在路由入口引入  // 路由组件: https://reactnavigation.org/docs/intro/
-
+import __listen_router_change from './__listen_router_change'; // 监听路由变化
 //+++++++++++++++++++++++++++++++++++++++++++++
 //              引入组件文件
 //+++++++++++++++++++++++++++++++++++++++++++++
-import LoginBeforeScreen from './LoginBeforeScreen';  // 登录前   注：登录前后，不让用户看到去登录界面的按钮
-import LoginAfterScreen from './LoginAfterScreen';   // 登录后
-
+import LoginBeforeScreen from './LoginBeforeScreen';  // 登录前
+import LoginAfterScreen from './LoginAfterScreen';    // 登录后
 
 //+++++++++++++++++++++++++++++++++++++++++++++
 //                书写路由  
@@ -24,6 +27,9 @@ const IndexRouter = StackNavigator({
   headerMode:'none', // 隐藏头
   initialRouteName: 'LoginBefore', // 设置默认的页面组件
 });
+
+__listen_router_change.run(IndexRouter); // 监听全局路由变化，注：登录前后，不让用户看到去登录界面的按钮
+
 
 
 // -------------------------------------------//
