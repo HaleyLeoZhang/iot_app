@@ -18,9 +18,56 @@ export default class TestWebview_rn_bridgeScreen extends Base{
     super(p);
     this.logic = new coreLogic(this);
     this.state = {
-      webview_h: 400
+      webview_h: 0
     };
   }
+
+  //++++++++++++++++++++++++++++++++++++++++++
+  // 本地实现 webview
+  //++++++++++++++++++++++++++++++++++++++++++
+
+  /**
+  * 详情页视图 --- webview资源
+  */
+  __detail_webview_html(){
+    let pics = this.state.data.list3;
+    let html = '<style>html,body{width:100%;margin: 0;}img{width:100%; display:block; margin:0;padding:0;}</style>';
+    for(let i in pics){
+      html += `<img src="` + pics[i] + `"/>`;
+    }
+    tool.log('html');
+    tool.log(html);
+    return html;
+  }
+
+  /**
+  * 详情页视图 --- webview
+  */
+  __detail_webview(){
+    let it = this;
+    // source_obj
+    let source_obj = {
+      html : it.__detail_webview_html(),
+    };
+    // style
+    let webView_style = {height: it.state.webview_h,width: gScreen.width}
+    return (
+        <WebView
+          ref="hlz_blog_books"
+          style={webView_style}
+          scrollEnabled={false} 
+          javaScriptEnabled={true}  
+          injectedJavaScript={it.logic.get_webview_h_height()}
+          onMessage={event => {it.logic.msg_from_webview_h(event)}}
+          source={source_obj}
+        ></WebView>
+    );
+  }
+
+
+  //++++++++++++++++++++++++++++++++++++++++++
+  // 直接引入网页资源
+  //++++++++++++++++++++++++++++++++++++++++++
   
   // 测试页面
   layer_top(){
