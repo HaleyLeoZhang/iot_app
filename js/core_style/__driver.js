@@ -2,6 +2,7 @@
 //  Author: 云天河Blog       http://www.hlzblog.top/
 //++++++++++++++++++++++++++++++++++++++++++++++++++
 
+const header_height = 40; // 头部导航栏的高
 
 // 生成样式 --- 驱动
 import { StyleSheet } from 'react-native';
@@ -13,6 +14,36 @@ let __conf = {
   __container: {
     flex:1,
     backgroundColor:'#fff', // 主要是控制当前页面的背景色
+  },
+
+  // 头部
+
+  // 头部
+  __header:{
+    height: header_height,
+    backgroundColor: '#8AB7FC',
+  },
+  __header_arrow:{
+    height: header_height,
+    width: gScreen.width * 0.2,
+  },
+  __header_arrow_img:{
+    marginLeft: 20,
+    marginTop: (header_height - 35 * gScreen.onePix)/2, // 计算垂直居中
+    height: 35 * gScreen.onePix,
+    width: 35 * gScreen.onePix,
+  },
+  __header_title:{
+    height: header_height,
+    width: gScreen.width * 0.6,
+  },
+  __header_title_text:{
+    height: header_height,
+    textAlign: 'center',
+    fontSize: 14,
+    color: '#fff',
+    fontWeight: '600',
+    lineHeight: (header_height - 24 * gScreen.onePix)/2 + 14, // 计算垂直居中
   },
 
 

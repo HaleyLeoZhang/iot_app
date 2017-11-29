@@ -63,8 +63,8 @@ export default class {$class_name}Screen extends Base{
   // 主渲染输出
   render(){
     return(
-      <ScrollView style={coreStyle.__container}>
-      </ScrollView>
+      <View style={coreStyle.__container}>
+      </View>
     );
   }
 }
