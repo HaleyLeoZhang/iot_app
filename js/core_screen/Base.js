@@ -19,7 +19,6 @@ export default class Base extends Component{
   
   // 底部栏，名称设定
   static navigationOptions = {
-    title : '', // 这是 StackNavigator 的标题
     header: null, // 隐藏顶部导航栏 ---已自定义样式，返回上一层
     tabBarVisible: false, // 隐藏底部导航栏
   };
@@ -61,8 +60,6 @@ export default class Base extends Component{
       </View>
     );
   }
-
-  // 顶部导航 --- 自定义样式
 
   // 主渲染输出， --- 要重写
   render(){

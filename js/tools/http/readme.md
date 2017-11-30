@@ -2,7 +2,7 @@
 
 ### 以JSON格式配置
 
-     String    url      请求的地址，不带 get 参数
+     String    url      请求的地址，可以带上 get 参数
      Function  func     回调函数
      Json      get      GET参数
      Json      post     POST参数

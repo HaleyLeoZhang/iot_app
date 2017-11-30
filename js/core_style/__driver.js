@@ -15,9 +15,7 @@ let __conf = {
     flex:1,
     backgroundColor:'#fff', // 主要是控制当前页面的背景色
   },
-
-  // 头部
-
+  
   // 头部
   __header:{
     height: header_height,
