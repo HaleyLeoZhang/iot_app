@@ -49,16 +49,23 @@ export default class Base extends Component{
     );
   }
 
-  // 加载层
-  __loading(){
-    return(
-      <View style={coreStyle.__loading}>
-        <Image
-          source={require('../img/loading.gif')}
-          style={coreStyle.__loading_gif}
-        ></Image>
-      </View>
-    );
+  /**
+  * 加载层
+  * @param bool status 加载层开关的状态值  false->加载结束 true->加载中
+  */
+  __loading(status=false){
+    if( status === true ){
+      return(
+        <View style={coreStyle.__loading}>
+          <Image
+            source={require('../img/loading.gif')}
+            style={coreStyle.__loading_gif}
+          ></Image>
+        </View>
+      );
+    }else{
+      return (<View></View>);
+    }
   }
 
   // 主渲染输出， --- 要重写
