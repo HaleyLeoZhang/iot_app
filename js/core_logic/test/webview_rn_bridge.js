@@ -30,8 +30,8 @@ export default class coreLogic {
         setInterval(changeHeight, 500);
       }())
     `;
-    log('invoke_js');
-    log(invoke_js);
+    // log('invoke_js');
+    // log(invoke_js);
     return invoke_js;
   }
 

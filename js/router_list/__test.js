@@ -13,12 +13,12 @@ import {
 
 
 // import Base from '../core_screen/Base';
-// import TestWebview_rn_bridgeScreen from '../core_screen/test/webview_rn_bridge';
-import TestEsp_touchScreen from '../core_screen/test/esp_touch';
+import TestWebview_rn_bridgeScreen from '../core_screen/test/webview_rn_bridge';
+
 //+++++++++++++++++++++++++++++++++++++++++++++
 //              引入组件文件
 //+++++++++++++++++++++++++++++++++++++++++++++
-class IndexRouter extends TestEsp_touchScreen{
+class IndexRouter extends TestWebview_rn_bridgeScreen{
   // // 析构函数
   // constructor( props ){
   //   super( props );
@@ -54,14 +54,10 @@ class IndexRouter extends TestEsp_touchScreen{
   //   }
   //   http.request(__conf);
   // }
-
   // render(){
-  //   return(
-  //     <View style={{flex:1,backgroundColor:'#fff'}}>
-  //       <Text>测试时间 2017年11月6日 23:14:38 </Text>
-  //     </View>
-  //   );
+  //   return this.__separate();
   // }
+
 }
 
 

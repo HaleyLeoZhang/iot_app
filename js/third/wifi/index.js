@@ -43,8 +43,8 @@ export default class wifi{
       .then(results => {
         __config.success(results); // 执行回调
         // Array of device success do smartconfig
-        tool.log('bindWifiDeviceModule -> wifi_config_start : success');
-        tool.log(results);
+        log('bindWifiDeviceModule -> wifi_config_start : success');
+        log(results);
         /* 示例返回数据
           [
             {
@@ -59,8 +59,8 @@ export default class wifi{
           ]
         */
       }).catch(e => {
-        tool.log('bindWifiDeviceModule -> wifi_config_start : error');
-        tool.log(e.message);
+        log('bindWifiDeviceModule -> wifi_config_start : error');
+        log(e.message);
         __config.error(e);
       });
   }
@@ -77,7 +77,7 @@ export default class wifi{
   * @param callback func 带参回调函数(string)
   */
   static wifi_get_ssid(func){
-    tool.log('正在执行wifi_get_ssid');
+    log('正在执行wifi_get_ssid');
     NetworkInfo.getSSID(ssid => {
       func(ssid);
     });
@@ -110,7 +110,7 @@ export default class wifi{
         func(wifiArray);
       }
       , error => {
-        tool.log(error, 3);
+        log(error, 3);
       }
     );
   }

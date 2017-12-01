@@ -10,7 +10,7 @@ import {
   NavigationActions,
 }
 from 'react-navigation';
-// 安卓返回键直接退出的列表
+// 配置项 ---安卓返回键直接退出的列表
 const forbidden_list = [
   // 登录前，及其一级路由
   "LoginBefore",
@@ -34,12 +34,6 @@ export default class __listen_router_change{
       // 更新视图前 --- 安卓 --- 返回键相关
       if ( undefined !== state && __IOS__ === false  && action.type=== NavigationActions.BACK) {
         let now_router_name = this.get_router_name(state); // 当前路由名
-        let forbidden_list = [ // 禁止返回键列表，直接退出程序
-          // 登录前，及其一级路由
-          "LoginBefore",
-          // 登录后，及其一级路由
-          "LoginAfter",
-        ];
 
         for(let i in forbidden_list){
           if (forbidden_list[i] === now_router_name) {

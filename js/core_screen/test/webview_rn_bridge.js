@@ -18,7 +18,7 @@ export default class TestWebview_rn_bridgeScreen extends Base{
     super(p);
     this.logic = new coreLogic(this);
     this.state = {
-      webview_h: 0
+      webview_h: 0 // 初始高度为0
     };
   }
 
@@ -35,8 +35,8 @@ export default class TestWebview_rn_bridgeScreen extends Base{
     for(let i in pics){
       html += `<img src="` + pics[i] + `"/>`;
     }
-    tool.log('html');
-    tool.log(html);
+    log('html');
+    log(html);
     return html;
   }
 
@@ -106,6 +106,7 @@ export default class TestWebview_rn_bridgeScreen extends Base{
   render(){
     return(
       <View style={coreStyle.container}>
+        {this.__header()}
         {this.layer_top()}
         {this.layer_bottom()}
       </View>

@@ -4,7 +4,14 @@
 
 // 官方组件
 import React, { Component } from 'react';
-import {View, ScrollView, Image} from 'react-native';
+import {
+  View, 
+  ScrollView, 
+  Image,
+  Text,
+}
+from 'react-native';
+import Button from 'react-native-button';
 // 第三方组件
 
 // 基础组件
@@ -23,23 +30,30 @@ export default class Base extends Component{
     tabBarVisible: false, // 隐藏底部导航栏
   };
 
-  // 隔断层
-  __separate(){
+  /**
+  * 灰色隔断层
+  * @param int set_heigh 隔断高度
+  */
+  __separate(set_heigh=10){
     return(
-      <View style={coreStyle.__separate}></View>
+      <View style={[coreStyle.__separate,{height:set_heigh}]}></View>
     );
   }
 
-  // 头部
-  ____header(title='请输入标题'){
+  /**
+  * 头部
+  * @param string title 导航栏标题
+  */
+  __header(title='请输入标题'){
     let { goBack } = this.props.navigation; // 配置此项，让模板中可设置跳转到的 route
     return(
-        <View style={[coreStyle.__header,coreStyle.block_outer]}>
+        <View style={[coreStyle.__header,coreStyle.__flex_outer]}>
           <Button onPress={()=>{goBack();}}>
             <View style={coreStyle.__header_arrow}>
               <Image 
                 style={[coreStyle.__header_arrow_img,Image.strech]}
-                source={require('../img/back.png')}></Image>
+                source={require('../img/back.png')}>
+              </Image>
             </View>
           </Button>
           <View style={coreStyle.__header_title}>
@@ -68,11 +82,14 @@ export default class Base extends Component{
     }
   }
 
-  // 主渲染输出， --- 要重写
+  // 示例主渲染输出， --- 要重写
   render(){
     return(
       <View style={coreStyle.__container}>
-        <ScrollView>测试</ScrollView>
+        {this.____header('这里是导航栏标题')}
+        <View style={{height:env.height - 40 }}>
+          <ScrollView>测试</ScrollView>
+        </View>
       </View>
     );
   }
