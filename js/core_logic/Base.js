@@ -3,9 +3,9 @@
 //++++++++++++++++++++++++++++++++++++++++++++++++++
 
 /**
-* 逻辑类
+* 逻辑类 --- 基类    通过 this.__logic调用
 */
-export default class coreLogic {
+export default class Base {
   constructor(pointer){
     this.p = pointer ; // 存储对应视图组件的 this指针
   }

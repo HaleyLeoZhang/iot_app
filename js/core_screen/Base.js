@@ -82,6 +82,24 @@ export default class Base extends Component{
     }
   }
 
+  /**
+  * 消息层
+  * it.refs.toast.show('输出的文字');
+  */
+  __toast(){
+    return(
+      <Toast
+        ref='toast' 
+        position='middle'
+        style={{backgroundColor:'#2b2b2b'}}     
+        fadeInDuration={500}
+        fadeOutDuration={500}
+        opacity={0.8}
+      ></Toast>
+    );
+  }
+
+
   // 示例主渲染输出， --- 要重写
   render(){
     return(
@@ -90,6 +108,7 @@ export default class Base extends Component{
         <View style={{height:env.height - 40 }}>
           <ScrollView>测试</ScrollView>
         </View>
+        {this.__toast()}
       </View>
     );
   }

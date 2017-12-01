@@ -1,7 +1,8 @@
 /**
 * 逻辑类
 */
-export default class coreLogic {
+
+export default class coreLogic{
   constructor(pointer){
     this.p = pointer ; // 存储对应视图组件的 this指针
   }
