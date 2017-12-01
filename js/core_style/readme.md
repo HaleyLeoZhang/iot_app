@@ -20,8 +20,8 @@
             height:80,
         },
         img_box_img:{
-            width:50,
-            height:50,
+            width:50 * env.pix,
+            height:50* env.pix,
         },
         img_box_img_info:{
             width:50,
