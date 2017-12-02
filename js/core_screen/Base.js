@@ -30,6 +30,9 @@ export default class Base extends Component{
     tabBarVisible: false, // 隐藏底部导航栏
   };
 
+  // 设置导航名
+  static nav_name = '导航名';
+
   /**
   * 灰色隔断层
   * @param int set_heigh 隔断高度
@@ -44,7 +47,7 @@ export default class Base extends Component{
   * 头部
   * @param string title 导航栏标题
   */
-  __header(title='请输入标题'){
+  __header(){
     let { goBack } = this.props.navigation; // 配置此项，让模板中可设置跳转到的 route
     return(
         <View style={[coreStyle.__header,coreStyle.__flex_outer]}>
@@ -57,7 +60,7 @@ export default class Base extends Component{
             </View>
           </Button>
           <View style={coreStyle.__header_title}>
-            <Text style={[coreStyle.__header_title_text]}>{title}</Text>
+            <Text style={[coreStyle.__header_title_text]}>{this.nav_name}</Text>
           </View>
         </View>
     );
@@ -84,7 +87,7 @@ export default class Base extends Component{
 
   /**
   * 消息层
-  * it.refs.toast.show('输出的文字');
+  * this.__logic.toast('输出的文字');
   */
   __toast(){
     return(
@@ -99,14 +102,20 @@ export default class Base extends Component{
     );
   }
 
+  // 如果想用顶部导航栏，请把要渲染的视图放到这里
+  __render(){
+    return(<View></View>);
+  }
+
 
   // 示例主渲染输出， --- 要重写
   render(){
     return(
       <View style={coreStyle.__container}>
-        {this.____header('这里是导航栏标题')}
+        {/* header高40 */}
+        {this.____header()}
         <View style={{height:env.height - 40 }}>
-          <ScrollView>测试</ScrollView>
+          {this.__render()}
         </View>
         {this.__toast()}
       </View>
