@@ -90,9 +90,9 @@ export default class Base extends Component{
   __toast(){
     return(
       <Toast
-        ref='toast' 
-        position='middle'
-        style={{backgroundColor:'#2b2b2b'}}     
+        ref='toast'
+        position='bottom'
+        style={{backgroundColor:'#2b2b2b'}}
         fadeInDuration={500}
         fadeOutDuration={500}
         opacity={0.8}
