@@ -11,9 +11,9 @@ import {
   Text,
 }
 from 'react-native';
-import Button from 'react-native-button';
 // 第三方组件
-
+import Button from 'react-native-button'; // 按钮
+import Toast, {DURATION} from 'react-native-easy-toast'; // 弹出提示消息
 // 基础组件
 import coreStyle from '../core_style/Base';  // ----样式
 

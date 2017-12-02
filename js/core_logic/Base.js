@@ -16,9 +16,10 @@ export default class Base {
   /**
   * 弹出消息
   * @param string msg  消息内容
-  * @param int    time 显示时间，单位秒
   */
-  __toast(msg, time=1){
+  __toast( msg ){
+    // 假设人的正常阅读速度为 3个字每秒 计算时间
+    let time = Math.ceil(msg.length / 3);
     this.p.refs.toast.show(msg, time * 1000);
   }
 

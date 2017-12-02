@@ -53,7 +53,7 @@ import {
 // 基础引入
 import coreStyle from '{$tool->layer_add}../core_style/{$tool->router}'; // 样式
 import coreLogic from '{$tool->layer_add}../core_logic/{$tool->router}'; // 逻辑
-import Base from '{$tool->layer_add}../core_screen/Base'; // ---基类
+import Base from '{$tool->layer_add}../core_screen/Base'; // 基类
 
 export default class {$class_name}Screen extends Base{
   constructor(p){
@@ -63,17 +63,16 @@ export default class {$class_name}Screen extends Base{
     };
   }
   
-
   // 设置导航名
   static nav_name = '导航名';
 
-  // 渲染 --- 带导航栏的用这个
+  // 渲染 --- 带导航
   __render(){
     this.nav_name('这是导航栏名字');
     return(<View></View>);
   }
 
-  // 渲染 --- 不带导航栏的用这个
+  // 渲染 --- 不带导航栏
   render(){
     return(
       <View style={coreStyle.__container}>
