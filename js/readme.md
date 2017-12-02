@@ -20,7 +20,7 @@
     │  ├─http       // 网络相关封装
     │  ├─log        // 调试相关 --- 打包时，请在 配置目录 关闭日志输出
     │  ├─storage    // 异步存储
-    │  └─toast      // 弹出层
+    │  └─toast      // 消息提示层
     └─__auto      // 自动化生成对应 core_logic、core_screen、core_style 的脚本
 
 > android/app/src/main/AndroidManifest.xml 请添加如下权限
