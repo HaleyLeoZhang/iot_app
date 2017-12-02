@@ -3,7 +3,7 @@
 //++++++++++++++++++++++++++++++++++++++++++++++++++
 
 /**
-* 逻辑类 --- 基类    通过 this.__logic调用
+* 逻辑类 --- 基类
 */
 export default class Base {
   constructor(pointer){
@@ -12,13 +12,13 @@ export default class Base {
   //++++++++++++++++++++++++++++++++++++++++++++++++++
   //                     本地逻辑
   //++++++++++++++++++++++++++++++++++++++++++++++++++
-  
+
   /**
   * 弹出消息
   * @param string msg  消息内容
   * @param int    time 显示时间，单位秒
   */
-  toast(msg, time=1){
+  __toast(msg, time=1){
     this.p.refs.toast.show(msg, time * 1000);
   }
 

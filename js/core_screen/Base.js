@@ -30,8 +30,8 @@ export default class Base extends Component{
     tabBarVisible: false, // 隐藏底部导航栏
   };
 
-  // 设置导航名
-  static nav_name = '导航名';
+  // 设置导航栏目名字
+  static nav_name = '';
 
   /**
   * 灰色隔断层
@@ -87,7 +87,7 @@ export default class Base extends Component{
 
   /**
   * 消息层
-  * this.__logic.toast('输出的文字');
+  * this.p.refs.toast.show('输出的文字');
   */
   __toast(){
     return(
@@ -112,7 +112,7 @@ export default class Base extends Component{
   render(){
     return(
       <View style={coreStyle.__container}>
-        {/* header高40 */}
+        {/* header 高 40 */}
         {this.____header()}
         <View style={{height:env.height - 40 }}>
           {this.__render()}

@@ -6,7 +6,8 @@ $p1_tpl = <<<eof
 /**
 * 逻辑类
 */
-export default class coreLogic{
+import Base from '{$tool->layer_add}../core_logic/Base'; // ---基类
+export default class coreLogic extends Base{
   constructor(pointer){
     this.p = pointer ; // 存储对应视图组件的 this指针
   }
@@ -45,12 +46,13 @@ $p3_tpl = <<<eof
 import React from 'react'; // render需要
 import {
   ScrollView, 
+  View,
 }from 'react-native';
 // 第三方组件
 
 // 基础引入
-import coreStyle from '{$tool->layer_add}../core_style/{$tool->router}';     // ---样式
-import coreLogic from '{$tool->layer_add}../core_logic/{$tool->router}';     // ---逻辑
+import coreStyle from '{$tool->layer_add}../core_style/{$tool->router}'; // 样式
+import coreLogic from '{$tool->layer_add}../core_logic/{$tool->router}'; // 逻辑
 import Base from '{$tool->layer_add}../core_screen/Base'; // ---基类
 
 export default class {$class_name}Screen extends Base{
@@ -60,10 +62,20 @@ export default class {$class_name}Screen extends Base{
   }
   
 
-  // 主渲染输出
+  // 设置导航名
+  static nav_name = '导航名';
+
+  // 渲染 --- 带导航栏的用这个
+  __render(){
+    this.nav_name('这是导航栏名字');
+    return(<View></View>);
+  }
+
+  // 渲染 --- 不带导航栏的用这个
   render(){
     return(
       <View style={coreStyle.__container}>
+        {this.__toast()}
       </View>
     );
   }
