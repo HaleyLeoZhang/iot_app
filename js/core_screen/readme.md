@@ -16,13 +16,20 @@
         super(p);
         this.logic = new coreLogic(this);
       }
-     
-      // 主渲染输出， --- 要重写
+      
+    
+      // 渲染 --- 带导航栏的用这个
+      __render(){
+        this.nav_name('这是导航栏名字');
+        return(<View></View>);
+      }
+    
+      // 渲染 --- 不带导航栏的用这个
       render(){
         return(
-          <ScrollView style={coreStyle.__container}>
-            <View>测试</View>
-          </ScrollView>
+          <View style={coreStyle.__container}>
+            {this.__toast()}
+          </View>
         );
       }
     }

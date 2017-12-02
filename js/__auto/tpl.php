@@ -59,6 +59,8 @@ export default class {$class_name}Screen extends Base{
   constructor(p){
     super(p);
     this.logic = new coreLogic(this);
+    this.state = {
+    };
   }
   
 

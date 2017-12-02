@@ -16,12 +16,10 @@ import Button from 'react-native-button';
 
 // 基础组件
 import coreStyle from '../core_style/Base';  // ----样式
-import coreLogic from '../core_logic/Base';  // ----逻辑
 
 export default class Base extends Component{
   constructor(p){
     super(p);
-    this.__logic = new coreLogic(this);
   }
   
   // 底部栏，名称设定
