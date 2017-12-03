@@ -1,9 +1,9 @@
 # App Version v0.0.2
 云天河[软件方面]与一位老友[硬件方面]联合设计的物联网毕业设计  
-此次App完全由云天河个人独立架构与开发设计  
+此次App完全由云天河独立架构与开发设计  
 
 ## 开发环境
-nodeJS、Java、php、golang、Nginx、Linux、Mysql、Redis
+nodeJS、Java、php、golang、Nginx、Linux、MaraDB、Redis...
 
 ## APP层面主技术点
 react-native、ES6  
@@ -16,11 +16,9 @@ react-native、ES6
 > 可行性研究
 
 云天河在软件方面可以做：
-  App 、 http服务可以用php 、 tcp服务可以用golang
-
-老友可以在硬件实现各种
-
-反正是可行的....
+  App 、 http服务可以用php 、 tcp服务可以用golang  
+老友可以在硬件实现各种  
+反正是可行的....  
 
 > 需求分析
 
