@@ -14,8 +14,10 @@ from 'react-navigation';
 const forbidden_list = [
   // 登录前，及其一级路由
   "LoginBefore",
+  "LoginPre",
   // 登录后，及其一级路由
   "LoginAfter",
+  "HomeView",
 ];
 
 
@@ -51,7 +53,7 @@ export default class __listen_router_change{
   */
   static get_router_name(router_info) {
     if( undefined!== router_info.index ){
-      return get_router_name(
+      return this.get_router_name(
         router_info.routes[router_info.index]
       );
     }else{

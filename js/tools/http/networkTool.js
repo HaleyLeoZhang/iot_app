@@ -38,7 +38,7 @@ class networkTool{
       func(token);
     }).catch(err => {
       // 如果没有找到数据且没有sync方法
-      toast.run('请先登录');
+      toast.run('身份已过期，请先登录');
     });
   }
 

@@ -3,7 +3,7 @@
 //++++++++++++++++++++++++++++++++++++++++++++++++++
 
 // 官方组件
-import React, { Component } from 'react';
+import React,{Component} from 'react'; // render需要
 import {
   View, 
   ScrollView, 
@@ -20,6 +20,7 @@ import coreStyle from '../core_style/Base';  // ----样式
 export default class Base extends Component{
   constructor(p){
     super(p);
+    this.nav_name = ''; // 设置导航栏目名字
   }
   
   // 底部栏，名称设定
@@ -28,8 +29,6 @@ export default class Base extends Component{
     tabBarVisible: false, // 隐藏底部导航栏
   };
 
-  // 设置导航栏目名字
-  static nav_name = '';
 
   /**
   * 灰色隔断层
@@ -46,10 +45,10 @@ export default class Base extends Component{
   * @param string title 导航栏标题
   */
   __header(){
-    let { goBack } = this.props.navigation; // 配置此项，让模板中可设置跳转到的 route
+    let it = this;
     return(
         <View style={[coreStyle.__header,coreStyle.__flex_outer]}>
-          <Button onPress={()=>{goBack();}}>
+          <Button onPress={()=>{it.logic.__header_callback();}}>
             <View style={coreStyle.__header_arrow}>
               <Image 
                 style={[coreStyle.__header_arrow_img,Image.strech]}
@@ -58,7 +57,7 @@ export default class Base extends Component{
             </View>
           </Button>
           <View style={coreStyle.__header_title}>
-            <Text style={[coreStyle.__header_title_text]}>{this.nav_name}</Text>
+            <Text style={coreStyle.__header_title_text}>{this.nav_name}</Text>
           </View>
         </View>
     );
@@ -100,23 +99,25 @@ export default class Base extends Component{
     );
   }
 
-  // 如果想用顶部导航栏，请把要渲染的视图放到这里
-  __render(){
-    return(<View></View>);
-  }
+  //+++++++++++++++++++++++++++++++++++++++++++++++++++
+  //    各种导航栏，在render函数中使用
+  //+++++++++++++++++++++++++++++++++++++++++++++++++++
 
-
-  // 示例主渲染输出， --- 要重写
-  render(){
+  /**
+  * 带顶部导航栏 栏目高 40
+  * @param View render_view 待渲染的视图组件
+  */
+  __render(render_view){
     return(
       <View style={coreStyle.__container}>
         {/* header 高 40 */}
-        {this.____header()}
+        {this.__header()}
         <View style={{height:env.height - 40 }}>
-          {this.__render()}
+          {render_view}
         </View>
         {this.__toast()}
       </View>
     );
   }
+  
 }

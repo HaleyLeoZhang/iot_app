@@ -18,9 +18,25 @@ export default class Base {
   * @param string msg  消息内容
   */
   __toast( msg ){
-    // 假设人的正常阅读速度为 3个字每秒 计算时间
+    // 假设人的正常阅读速度为 3个字每秒 计算时间 --- 考虑纯汉字
     let time = Math.ceil(msg.length / 3);
     this.p.refs.toast.show(msg, time * 1000);
+  }
+
+  /**
+  * 点击顶部导航条返回按钮的回调函数
+  * @param callback func 回调函数
+  */
+  __header_callback(func=false){
+    if( false === func ){
+      let { goBack } = this.p.props.navigation;
+      log('点击了返回');
+      log('this.p.props');
+      log(this.p.props);
+      goBack();
+    }else{
+      func();
+    }
   }
 
   //++++++++++++++++++++++++++++++++++++++++++++++++++
