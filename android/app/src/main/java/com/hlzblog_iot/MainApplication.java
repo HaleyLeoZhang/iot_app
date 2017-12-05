@@ -3,13 +3,14 @@ package com.hlzblog_iot;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.theweflex.react.WeChatPackage;
+import org.devio.rn.splashscreen.SplashScreenReactPackage;
 import com.tuanpm.RCTSmartconfig.RCTSmartconfigPackage;
 import com.pusherman.networkinfo.RNNetworkInfoPackage;
-import com.devstepbcn.wifi.AndroidWifiPackage;
-import com.theweflex.react.WeChatPackage;
-import com.imagepicker.ImagePickerPackage;
 import com.reactnative.ivpusic.imagepicker.PickerPackage;
 import com.lwansbrough.RCTCamera.RCTCameraPackage;
+import com.devstepbcn.wifi.AndroidWifiPackage;
+
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
@@ -30,13 +31,13 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new WeChatPackage(),
+            new SplashScreenReactPackage(),
             new RCTSmartconfigPackage(),
             new RNNetworkInfoPackage(),
-            new AndroidWifiPackage(),
-            new WeChatPackage(),
-            new ImagePickerPackage(),
             new PickerPackage(),
-            new RCTCameraPackage()
+            new RCTCameraPackage(),
+            new AndroidWifiPackage()
       );
     }
 

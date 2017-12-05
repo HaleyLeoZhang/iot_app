@@ -47,6 +47,7 @@
 		C32BE68F0B7D41A096E54FA4 /* libdouble-conversion.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5732F9E64C194555BE6865E3 /* libdouble-conversion.a */; };
 		689227CAFC4D48E18D2CF3E8 /* libRNNetworkInfo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 067A6685A5194766B5B8E4E9 /* libRNNetworkInfo.a */; };
 		926ED0F321674E689D819D00 /* libRCTSmartconfig.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6ADE6C64CDB94ED2843F073C /* libRCTSmartconfig.a */; };
+		B7DD98AAF5A9486BA02E3C51 /* libSplashScreen.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ABE8976840F489E990E8CBC /* libSplashScreen.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -291,6 +292,8 @@
 		067A6685A5194766B5B8E4E9 /* libRNNetworkInfo.a */ = {isa = PBXFileReference; name = "libRNNetworkInfo.a"; path = "libRNNetworkInfo.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 		BF5352E9216844A78B989138 /* RCTSmartconfig.xcodeproj */ = {isa = PBXFileReference; name = "RCTSmartconfig.xcodeproj"; path = "../node_modules/react-native-smartconfig/ios/RCTSmartconfig/RCTSmartconfig.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
 		6ADE6C64CDB94ED2843F073C /* libRCTSmartconfig.a */ = {isa = PBXFileReference; name = "libRCTSmartconfig.a"; path = "libRCTSmartconfig.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		C46FD7164F8841B5B7783D38 /* SplashScreen.xcodeproj */ = {isa = PBXFileReference; name = "SplashScreen.xcodeproj"; path = "../node_modules/react-native-splash-screen/ios/SplashScreen.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		7ABE8976840F489E990E8CBC /* libSplashScreen.a */ = {isa = PBXFileReference; name = "libSplashScreen.a"; path = "libSplashScreen.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -330,6 +333,7 @@
 				C32BE68F0B7D41A096E54FA4 /* libdouble-conversion.a in Frameworks */,
 				689227CAFC4D48E18D2CF3E8 /* libRNNetworkInfo.a in Frameworks */,
 				926ED0F321674E689D819D00 /* libRCTSmartconfig.a in Frameworks */,
+				B7DD98AAF5A9486BA02E3C51 /* libSplashScreen.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -504,6 +508,7 @@
 				1B3E7C77CD5345D3868096BB /* RCTWeChat.xcodeproj */,
 				544A64D767474A46A8E15500 /* RNNetworkInfo.xcodeproj */,
 				BF5352E9216844A78B989138 /* RCTSmartconfig.xcodeproj */,
+				C46FD7164F8841B5B7783D38 /* SplashScreen.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -1062,6 +1067,7 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1071,6 +1077,7 @@
 					"$(SRCROOT)\..\node_modules\react-native-wechat\ios",
 					"$(SRCROOT)\..\node_modules\react-native-network-info\ios",
 					"$(SRCROOT)\..\node_modules\react-native-smartconfig\ios\RCTSmartconfig",
+					"$(SRCROOT)\..\node_modules\react-native-splash-screen\ios",
 				);
 			};
 			name = Debug;
@@ -1102,6 +1109,7 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1111,6 +1119,7 @@
 					"$(SRCROOT)\..\node_modules\react-native-wechat\ios",
 					"$(SRCROOT)\..\node_modules\react-native-network-info\ios",
 					"$(SRCROOT)\..\node_modules\react-native-smartconfig\ios\RCTSmartconfig",
+					"$(SRCROOT)\..\node_modules\react-native-splash-screen\ios",
 				);
 			};
 			name = Release;
@@ -1138,6 +1147,7 @@
 					"$(SRCROOT)\..\node_modules\react-native-wechat\ios",
 					"$(SRCROOT)\..\node_modules\react-native-network-info\ios",
 					"$(SRCROOT)\..\node_modules\react-native-smartconfig\ios\RCTSmartconfig",
+					"$(SRCROOT)\..\node_modules\react-native-splash-screen\ios",
 				);
 			};
 			name = Debug;
@@ -1164,6 +1174,7 @@
 					"$(SRCROOT)\..\node_modules\react-native-wechat\ios",
 					"$(SRCROOT)\..\node_modules\react-native-network-info\ios",
 					"$(SRCROOT)\..\node_modules\react-native-smartconfig\ios\RCTSmartconfig",
+					"$(SRCROOT)\..\node_modules\react-native-splash-screen\ios",
 				);
 			};
 			name = Release;
@@ -1204,6 +1215,7 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1213,6 +1225,7 @@
 					"$(SRCROOT)\..\node_modules\react-native-wechat\ios",
 					"$(SRCROOT)\..\node_modules\react-native-network-info\ios",
 					"$(SRCROOT)\..\node_modules\react-native-smartconfig\ios\RCTSmartconfig",
+					"$(SRCROOT)\..\node_modules\react-native-splash-screen\ios",
 				);
 			};
 			name = Debug;
@@ -1253,6 +1266,7 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1262,6 +1276,7 @@
 					"$(SRCROOT)\..\node_modules\react-native-wechat\ios",
 					"$(SRCROOT)\..\node_modules\react-native-network-info\ios",
 					"$(SRCROOT)\..\node_modules\react-native-smartconfig\ios\RCTSmartconfig",
+					"$(SRCROOT)\..\node_modules\react-native-splash-screen\ios",
 				);
 			};
 			name = Release;
@@ -1297,6 +1312,7 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 			};
 			name = Debug;
@@ -1321,6 +1337,7 @@
 				TVOS_DEPLOYMENT_TARGET = 10.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
