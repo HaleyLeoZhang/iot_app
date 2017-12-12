@@ -35,4 +35,26 @@ export default class helper{
     }
     return str_rmb + '.' + str_dot;
   }
+  /**
+  * 获取格式化后的时间
+  *    如： format_time("Y-m-d") 输出 2017-12-8
+  * @param string str 待格式化的时间
+  * @return string 
+  */
+  static format_time(str){
+    let date = new Date();
+    let Y = date.getFullYear(),
+        m = date.getMonth(),
+        d = date.getDate(),
+        h = date.getHours(),
+        i = date.getMinutes(),
+        s = date.getSeconds();
+    str = str.replace("Y", Y);
+    str = str.replace("m", m);
+    str = str.replace("d", d);
+    str = str.replace("h", h);
+    str = str.replace("i", i);
+    str = str.replace("s", s);
+    return str;
+  }
 }

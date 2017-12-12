@@ -89,7 +89,8 @@ let __conf = {
 //++++++++++++++++++++++++++++++++++++++++++++++
 const merge_style = ( __coreStyle )=>{
   for (let i in __conf) {
-    eval("__coreStyle." + i + " = __conf[i];"); // __coreStyle.item_name = item_value ;
+    // eval("__coreStyle." + i + " = __conf[i];"); // __coreStyle.item_name = item_value ;
+    __coreStyle[i] = __conf[i];
   }
   return StyleSheet.create(__coreStyle);
 }
