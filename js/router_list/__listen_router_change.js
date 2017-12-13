@@ -4,8 +4,8 @@
 
 
 /**
-* 监听路由变化
-*/
+ * 监听路由变化
+ */
 import {
   NavigationActions,
 }
@@ -24,21 +24,21 @@ const forbidden_list = [
 
 
 
-export default class __listen_router_change{
+export default class __listen_router_change {
   /**
-  * 开始监听变化
-  * @param StackNavigator IndexRouter 全局路由入口配置
-  */
-  static run(IndexRouter){
+   * 开始监听变化
+   * @param StackNavigator IndexRouter 全局路由入口配置
+   */
+  static run(IndexRouter) {
     // 监听路由变化
     const defaultGetStateForAction = IndexRouter.router.getStateForAction; // 获取将被渲染出来的视图相关信息
     IndexRouter.router.getStateForAction = (action, state) => {
       // 更新视图前 --- 安卓 --- 返回键相关
-      if ( undefined !== state && __IOS__ === false  && action.type=== NavigationActions.BACK) {
+      if(undefined !== state && __IOS__ === false && action.type === NavigationActions.BACK) {
         let now_router_name = this.get_router_name(state); // 当前路由名
 
-        for(let i in forbidden_list){
-          if (forbidden_list[i] === now_router_name) {
+        for(let i in forbidden_list) {
+          if(forbidden_list[i] === now_router_name) {
             return null; // 直接退出
           }
         }
@@ -47,16 +47,16 @@ export default class __listen_router_change{
     };
   }
   /**
-  * react-navigation监听路获取路由名变化
-  * @param json state  路由状态
-  * @return string  当前路由名
-  */
+   * react-navigation监听路获取路由名变化
+   * @param json state  路由状态
+   * @return string  当前路由名
+   */
   static get_router_name(router_info) {
-    if( undefined!== router_info.index ){
+    if(undefined !== router_info.index) {
       return this.get_router_name(
         router_info.routes[router_info.index]
       );
-    }else{
+    } else {
       return router_info.routeName;
     }
   }

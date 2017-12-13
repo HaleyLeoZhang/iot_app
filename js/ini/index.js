@@ -8,9 +8,24 @@ import {
 }
 from 'react-native';
 
+
+/**
+* 注意：生成release时,
+* 请设置 log_switch 为 0
+* 请设置 router_host 为生成环境地址
+* 请设置 版本号
+*/
+
 // 配置全局环境变量
 
 global.env = {
+
+  //++++++++++++++++++++++++++++++++++++++++++++++++++++++
+  //                  APP版本信息
+  //++++++++++++++++++++++++++++++++++++++++++++++++++++++
+  app_version: "0.2.0", //　当前版本号
+  app_download_prefix: "",　//　CDN下载前缀，安卓端直接下载
+
   //++++++++++++++++++++++++++++++++++++++++++++++++++++++
   //                  网络请求 - HTTP
   //++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -24,8 +39,8 @@ global.env = {
   //++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
   // 百分比布局
-  width : Dimensions.get('window').width ,  // 获取屏幕 宽  
-  height: Dimensions.get('window').height,  // 获取屏幕 高  
+  width : Dimensions.get('window').width ,  // 获取屏幕 宽
+  height: Dimensions.get('window').height,  // 获取屏幕 高
   // 图片适应屏幕分辨率
   pix: 1 / PixelRatio.get(), // 像素 * 密度比，图片用
 
