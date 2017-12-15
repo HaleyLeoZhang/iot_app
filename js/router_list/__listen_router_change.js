@@ -34,7 +34,7 @@ export default class __listen_router_change {
     const defaultGetStateForAction = IndexRouter.router.getStateForAction; // 获取将被渲染出来的视图相关信息
     IndexRouter.router.getStateForAction = (action, state) => {
       // 更新视图前 --- 安卓 --- 返回键相关
-      if(undefined !== state && __IOS__ === false && action.type === NavigationActions.BACK) {
+      if(undefined !== state && env.is_ios === false && action.type === NavigationActions.BACK) {
         let now_router_name = this.get_router_name(state); // 当前路由名
 
         for(let i in forbidden_list) {

@@ -5,13 +5,13 @@
 import {
   Dimensions,
   PixelRatio,
+  Platform,
 }
 from 'react-native';
 
-
 /**
 * 注意：生成release时,
-* 请设置 log_switch 为 0
+* 请设置 app_debug 为 false
 * 请设置 router_host 为生成环境地址
 * 请设置 版本号
 */
@@ -20,11 +20,15 @@ from 'react-native';
 
 global.env = {
 
+
   //++++++++++++++++++++++++++++++++++++++++++++++++++++++
-  //                  APP版本信息
+  //                  APP基础配置
   //++++++++++++++++++++++++++++++++++++++++++++++++++++++
-  app_version: "0.2.0", //　当前版本号
+  app_debug: true, // 如果生成release版，请设置为 false
+  app_version: "0.0.2", //　当前版本号
   app_download_prefix: "",　//　CDN下载前缀，安卓端直接下载
+  // 平台判断
+  is_ios: Platform.OS === 'ios' ? true : false,
 
   //++++++++++++++++++++++++++++++++++++++++++++++++++++++
   //                  网络请求 - HTTP

@@ -106,7 +106,7 @@ export default class wifi {
    *               有的话就自动与用户绑定，同时删除设备相关的用户数据
    */
   static wifi_get_list(func) {
-    if(!__IOS__) {
+    if(!env.is_ios) {
       Wifi.loadWifiList(
         wifiStringList => {
           let wifiArray = JSON.parse(wifiStringList);
@@ -126,7 +126,7 @@ export default class wifi {
    * }
    */
   static wifi_status(d) {
-    if(!__IOS__) {
+    if(!env.is_ios) {
       Wifi.isEnabled((isEnabled) => {
         if(isEnabled) {
           console.log("wifi service enabled");

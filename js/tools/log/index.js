@@ -9,6 +9,10 @@
  * @param int  level 日志等级  1 Debug ２ Info  3 Warn  4 Error
  */
 const log = (info, level=1) => {
+  // 是否为调试模式
+  if( false === env.app_debug ){
+    return;
+  }
   // 检查开关
   if (0 === env.log_switch) {
     return;

@@ -18,7 +18,7 @@ class toast{
   * @param int     option   0-> 短时间  1 -> 长时间  
   */
   static run (msg, option=1){
-    if( false === __IOS__ ){
+    if( false === env.is_ios ){
       switch( option ){
         case 0:
           ToastAndroid.show(msg, ToastAndroid.SHORT);
