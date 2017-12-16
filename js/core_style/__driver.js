@@ -4,17 +4,11 @@
 
 const distance_android = 25; // 注：苹果的APP是全屏的，安卓的大概会少25的高度
 
-const header_h = env.is_ios? 40 + distance_android : 40 ; // 头部导航栏的高
+const header_h = 40; // 头部导航栏的高
 const footer_h = 50; // 头部导航栏的高
 
-const __header_padding_top = env.is_ios? distance_android : 0; // 如果是ios 头部下调
-
-const __render_body_h = env.is_ios? 
-                        env.height - header_h - distance_android: 
-                        env.height - header_h - distance_android;
-const __render_with_footer_body_h = env.is_ios?
-                        env.height - header_h - footer_h : 
-                        env.height - header_h - footer_h - distance_android;
+const __render_body_h = env.height - header_h;
+const __render_with_footer_body_h =  env.height - header_h - footer_h - distace_android;
 
 // 生成样式 --- 驱动
 import { StyleSheet } from 'react-native';
@@ -30,7 +24,7 @@ let __conf = {
 
   // 头部
   __header: {
-    paddingTop: __header_padding_top,
+    marginTop: env.is_ios?distace_android:0,
     height: header_h,
     backgroundColor: '#8AB7FC',
   },

@@ -142,7 +142,7 @@ export default class Base extends Component {
       <View style={coreStyle.__container}>
         {/* header 高 40 */}
         {this.__header()}
-        <View style={{height:env.height - 60 -50 }}>
+        <View style={coreStyle.__render}>
           {render_view}
         </View>
         {/* footer 高 50 */}
