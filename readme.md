@@ -3,7 +3,7 @@
 此次App完全由云天河独立架构与开发设计  
 
 ## 开发环境
-nodeJS、Java、php、golang、Nginx、Linux、MaraDB、Redis...
+nodeJS、Java、php、golang、Nginx、Linux、MariaDB、Redis...
 
 ## APP层面主技术点
 react-native、ES6  

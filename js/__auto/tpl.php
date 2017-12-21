@@ -59,9 +59,9 @@ import Base from '{$tool->layer_add}../core_screen/Base'; // 基类
 export default class {$class_name}Screen extends Base{
   constructor(p){
     super(p);
-    this.logic = new coreLogic(this);
     this.state = {
     };
+    this.logic = new coreLogic(this);
   }
 
 
