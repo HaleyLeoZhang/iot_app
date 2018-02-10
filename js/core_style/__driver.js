@@ -8,7 +8,7 @@ const header_h = 40; // 头部导航栏的高
 const footer_h = 50; // 头部导航栏的高
 
 const __render_body_h = env.height - header_h;
-const __render_with_footer_body_h =  env.height - header_h - footer_h - distace_android;
+const __render_with_footer_body_h =  env.height - header_h - footer_h - distance_android;
 
 // 生成样式 --- 驱动
 import { StyleSheet } from 'react-native';
@@ -24,7 +24,7 @@ let __conf = {
 
   // 头部
   __header: {
-    marginTop: env.is_ios?distace_android:0,
+    marginTop: env.is_ios?distance_android:0,
     height: header_h,
     backgroundColor: '#8AB7FC',
   },
@@ -109,10 +109,11 @@ let __conf = {
 //            合并样式配置
 //++++++++++++++++++++++++++++++++++++++++++++++
 const merge_style = (__coreStyle) => {
-  for(let i in __conf) {
-    // eval("__coreStyle." + i + " = __conf[i];"); // __coreStyle.item_name = item_value ;
-    __coreStyle[i] = __conf[i];
-  }
+  // for(let i in __conf) {
+  //   // eval("__coreStyle." + i + " = __conf[i];"); // __coreStyle.item_name = item_value ;
+  //   __coreStyle[i] = __conf[i];
+  // }
+  Object.assign(__coreStyle, __conf);
   return StyleSheet.create(__coreStyle);
 }
 

@@ -16,10 +16,10 @@ import Base from '../../core_screen/Base'; // ---基类
 export default class TestWebview_rn_bridgeScreen extends Base {
   constructor(p) {
     super(p);
-    this.logic = new coreLogic(this);
     this.state = {
       webview_h: 0 // 初始高度为0
     };
+    this.logic = new coreLogic(this);
   }
 
   //++++++++++++++++++++++++++++++++++++++++++
